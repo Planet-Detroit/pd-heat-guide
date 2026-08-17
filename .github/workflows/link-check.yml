@@ -1,0 +1,29 @@
+# Monthly safety net: checks every external link on the guide still works.
+# If any link is dead, it opens a GitHub issue so someone knows to fix it.
+# CDC and michigan.gov block obvious bots, so we send a normal browser User-Agent.
+name: Monthly link check
+on:
+  schedule:
+    - cron: "0 13 1 * *"   # 1st of each month, 9am Detroit (13:00 UTC)
+  workflow_dispatch: {}      # can also be run by hand from the Actions tab
+permissions:
+  issues: write
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        id: check
+        run: |
+          python3 tests/check_links.py > result.txt 2>&1 || echo "failed=true" >> "$GITHUB_OUTPUT"
+          cat result.txt
+      - name: Open issue if links are broken
+        if: steps.check.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --title "Broken link(s) on heatguide.planetdetroit.org" \
+            --body "$(printf 'The monthly link check found problems:\n\n```\n%s\n```\n\nFix the link in index.html (and tests/test_page.py if the URL changed), then close this issue.' "$(cat result.txt)")" \
+            --label bug || true

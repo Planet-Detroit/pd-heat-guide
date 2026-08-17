@@ -3,33 +3,157 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planet Detroit Heat Guide — Coming Soon</title>
-  <meta name="description" content="A mobile guide from Planet Detroit to staying safe and informed during extreme heat in Metro Detroit. Coming soon.">
-  <!-- Holding page: keep out of search results until real content ships. Remove this line at launch. -->
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#2F333E">
-  <link rel="icon" href="https://planetdetroit.org/wp-content/uploads/2025/08/cropped-globe-1.png">
+  <title>Guide to Working Safely in the Heat — Planet Detroit</title>
+  <meta name="description" content="Know the signs of heat illness, what to do right away, when to call 911, and where to report unsafe conditions. A mobile guide for Metro Detroit workers from Planet Detroit.">
+  <meta name="theme-color" content="#2982C4">
+  <link rel="icon" href="assets/logo-dark.png">
   <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="Guide to Working Safely in the Heat">
+  <meta property="og:description" content="Signs of heat illness, what to do, when to call 911, and where to report unsafe conditions.">
+  <meta property="og:image" content="https://heatguide.planetdetroit.org/assets/logo-dark.png">
+
+  <!-- Google Analytics 4 — same property as planetdetroit.org tools (G-5QQJ9SVV07). -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QQJ9SVV07"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5QQJ9SVV07');
+    // Log which resource buttons and phone links people tap.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('http') === 0 || href.indexOf('tel:') === 0) {
+        gtag('event', 'resource_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 80) });
+      }
+    });
+  </script>
 </head>
 <body>
 
-  <main class="card">
-    <p class="eyebrow">Planet Detroit</p>
-    <h1>Heat<span class="accent">Guide</span></h1>
-    <p class="tagline">Coming soon: a mobile guide to staying safe, cool and informed during extreme heat in Metro Detroit.</p>
+<!-- SECTION: HEADER ------------------------------------------------------ -->
+<header class="site-header">
+  <a href="https://planetdetroit.org/" target="_blank" rel="noopener" class="logo-link">
+    <img src="assets/logo-dark.png" alt="Planet Detroit" class="logo" width="180" height="80">
+  </a>
+  <h1>Guide to Working Safely in the Heat</h1>
+  <p class="lede">Stay informed about heat risks, symptoms and what to do if you or a coworker gets sick on the job.</p>
+</header>
 
-    <ul class="preview">
-      <li>Where to find cooling centers near you</li>
-      <li>How to protect kids, elders and outdoor workers</li>
-      <li>What to do when the power goes out</li>
-      <li>Who to call — and who's accountable</li>
-    </ul>
+<main>
 
-    <a class="btn btn-primary" href="https://planetdetroit.org/newsletters/" target="_blank" rel="noopener">Get notified when it launches</a>
-    <a class="btn btn-secondary" href="https://deepdives.planetdetroit.org/heat-and-harm/" target="_blank" rel="noopener">Read “Heat and Harm” now</a>
+<!-- SECTION: EMERGENCY (must stay first — spec §4.4) -------------------- -->
+<section id="emergency" class="emergency" aria-labelledby="emergency-h">
+  <p class="badge">Emergency</p>
+  <h2 id="emergency-h">Heat stroke = call 911</h2>
+  <a class="btn btn-911" href="tel:911">Call 911 now</a>
+  <h3>Call 911 right away if the person:</h3>
+  <ul>
+    <li>Stops sweating</li>
+    <li>Seems confused, can't talk clearly or passes out</li>
+    <li>Has a seizure</li>
+    <li>Has very hot, red or dry skin</li>
+  </ul>
+  <h3>While you wait for help</h3>
+  <ul>
+    <li>Move the person to a cool place and remove outer clothing</li>
+    <li>Cool the body fast with cold, wet cloths, ice packs or cool water on the head, neck, armpits and groin</li>
+    <li>Stay with them until emergency medical services arrive</li>
+  </ul>
+</section>
 
-    <p class="fine">Independent, nonprofit environmental journalism for Metro Detroit. <a href="https://planetdetroit.org/" rel="noopener">planetdetroit.org</a></p>
-  </main>
+<!-- SECTION: KNOW THE SIGNS ---------------------------------------------- -->
+<section id="signs" aria-labelledby="signs-h">
+  <h2 id="signs-h">Know the signs of heat illness</h2>
+  <h3>Early warning signs</h3>
+  <ul>
+    <li>Heavy sweating</li>
+    <li>Headache, dizziness or confusion</li>
+    <li>Nausea or vomiting</li>
+    <li>Muscle cramps</li>
+    <li>Weakness or feeling faint</li>
+  </ul>
+  <h3>Take action right away</h3>
+  <ul>
+    <li>Move to shade or a cooler indoor spot</li>
+    <li>Sip cool water (small, frequent sips)</li>
+    <li>For heat cramps, have a snack or drink that replaces carbs and electrolytes every 15 to 20 minutes</li>
+    <li>Loosen clothing; use cool cloths or ice packs on the neck, armpits or groin</li>
+    <li>Rest until you feel better — don't go back to heavy work right away</li>
+    <li>Take a worker with heat exhaustion to a clinic or emergency room, or call 911 if medical care is unavailable</li>
+  </ul>
+  <p class="source">Source: <a href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" target="_blank" rel="noopener">The National Institute for Occupational Safety and Health (NIOSH)</a></p>
+</section>
+
+<!-- SECTION: TOOLS & RESOURCES ------------------------------------------- -->
+<section id="tools" aria-labelledby="tools-h">
+  <h2 id="tools-h">Tools and resources</h2>
+
+  <div class="resource">
+    <h3>OSHA-NIOSH Heat Safety Tool app</h3>
+    <p>Free app that shows the heat index where you are, hour by hour, with safety recommendations for outdoor work.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/osha-niosh-heat-safety-tool/id1239425102" target="_blank" rel="noopener">Get it for iPhone</a>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=erg.com.nioshheatindex" target="_blank" rel="noopener">Get it for Android</a>
+    </div>
+    <p class="fine"><a href="https://www.cdc.gov/niosh/heat-stress/communication-resources/app.html" target="_blank" rel="noopener">About the app (cdc.gov)</a></p>
+  </div>
+
+  <div class="resource">
+    <h3>Types of heat illness and what to do</h3>
+    <p>CDC/NIOSH explainer on heat stroke, heat exhaustion, cramps and rash — with a medical action plan for each.</p>
+    <a class="btn btn-secondary" href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" target="_blank" rel="noopener">Read the CDC guide <span class="domain">cdc.gov</span></a>
+  </div>
+
+  <div class="resource">
+    <h3>Heat illness prevention plans for Michigan workplaces</h3>
+    <p>MIOSHA's heat page includes a sample Heat Illness Prevention Plan employers can adopt, plus fact sheets and training materials.</p>
+    <a class="btn btn-secondary" href="https://www.michigan.gov/leo/bureaus-agencies/miosha/topics/heat" target="_blank" rel="noopener">MIOSHA heat resources <span class="domain">michigan.gov</span></a>
+  </div>
+
+  <div class="resource">
+    <h3>Federal heat safety guidance</h3>
+    <p>OSHA's heat exposure page: employer responsibilities, worker protections, water–rest–shade basics and first aid.</p>
+    <a class="btn btn-secondary" href="https://www.osha.gov/heat-exposure" target="_blank" rel="noopener">OSHA heat exposure <span class="domain">osha.gov</span></a>
+  </div>
+</section>
+
+<!-- SECTION: REPORT UNSAFE CONDITIONS ------------------------------------ -->
+<section id="report" aria-labelledby="report-h">
+  <h2 id="report-h">Report unsafe conditions</h2>
+  <p>You have the right to a safe workplace and to report hazards without retaliation. Michigan has no specific heat rule, but MIOSHA expects employers to take steps to prevent heat illness — such as providing water, rest and shade — and it investigates complaints.</p>
+  <div class="resource">
+    <h3>MIOSHA (Michigan)</h3>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://www.michigan.gov/leo/bureaus-agencies/miosha/enforcement-and-appeals/how-to-file-a-complaint-with-miosha" target="_blank" rel="noopener">File a complaint online <span class="domain">michigan.gov</span></a>
+      <a class="btn btn-secondary" href="tel:18008664674">Call 800-866-4674</a>
+    </div>
+  </div>
+  <div class="resource">
+    <h3>OSHA (federal)</h3>
+    <a class="btn btn-secondary" href="https://www.osha.gov/workers/file-complaint" target="_blank" rel="noopener">File a complaint with OSHA <span class="domain">osha.gov</span></a>
+  </div>
+</section>
+
+<!-- SECTION: PLANET DETROIT REPORTING ------------------------------------ -->
+<section id="reporting" aria-labelledby="reporting-h">
+  <h2 id="reporting-h">Planet Detroit's reporting on heat</h2>
+  <p>Our ongoing coverage of how extreme heat affects workers and communities in Metro Detroit — and what's being done about it.</p>
+  <a class="btn btn-primary" href="https://deepdives.planetdetroit.org/heat-and-harm/" target="_blank" rel="noopener">Read “Heat and Harm”</a>
+</section>
+
+</main>
+
+<!-- SECTION: FOOTER (the only place dates are allowed) -------------------- -->
+<footer class="site-footer">
+  <a href="https://planetdetroit.org/" target="_blank" rel="noopener">
+    <img src="assets/logo-white.png" alt="Planet Detroit" class="logo-footer" width="124" height="55">
+  </a>
+  <p>Planet Detroit is an independent, nonprofit newsroom covering environment, health and climate in Metro Detroit.</p>
+  <p class="fine">Health guidance adapted from NIOSH (CDC). This guide is general information and is not medical advice — in an emergency, call 911.</p>
+  <p class="fine">Last reviewed: August 2026 · <a href="https://planetdetroit.org/" target="_blank" rel="noopener">planetdetroit.org</a></p>
+</footer>
 
 </body>
 </html>
