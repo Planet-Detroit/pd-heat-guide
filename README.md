@@ -14,9 +14,9 @@
 | `MAINTENANCE.md` | How to tell if it's working + how to fix common problems. |
 
 ## One-time launch steps (Nina)
-1. **DNS** (wherever planetdetroit.org DNS lives — likely Cloudflare/GoDaddy):
-   add a `CNAME` record → name `heatguide`, value `planet-detroit.github.io`, TTL auto. If Cloudflare, set proxy to **DNS only** (grey cloud) until the certificate is issued.
-2. **GitHub:** repo `Planet-Detroit/pd-heat-guide` → Settings → Pages → Source: *Deploy from branch* `main` / root. Custom domain: `heatguide.planetdetroit.org`. Tick *Enforce HTTPS* once the check turns green (can take up to an hour).
+1. **DNS — AWS Route 53** (planetdetroit.org's hosted zone; `sponsors.` and `deepdives.` are set up the same way):
+   Route 53 → Hosted zones → planetdetroit.org → *Create record* → Record name `heatguide`, Type **CNAME**, Value `planet-detroit.github.io`, TTL 300. Save.
+2. **GitHub Pages** — already enabled (branch `main`, custom domain `heatguide.planetdetroit.org`). After DNS propagates (5–60 min) go to https://github.com/Planet-Detroit/pd-heat-guide/settings/pages and tick **Enforce HTTPS** once the DNS check is green.
 3. Open https://heatguide.planetdetroit.org on your phone.
 
 ## Deploying changes
