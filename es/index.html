@@ -8,6 +8,8 @@
   <meta name="theme-color" content="#2982C4">
   <link rel="icon" href="../assets/logo-dark.png">
   <link rel="stylesheet" href="../styles.css">
+  <!-- Live NWS heat-alert banner: hidden unless a heat advisory/warning is active. Fails silently. -->
+  <script src="../alerts.js" defer></script>
   <meta property="og:title" content="Guía para trabajar de manera segura en condiciones de calor">
   <meta property="og:description" content="Síntomas de las enfermedades causadas por el calor, qué hacer, cuándo llamar al 911 y dónde denunciar condiciones inseguras.">
   <meta property="og:image" content="https://heatguide.planetdetroit.org/assets/logo-dark.png">
@@ -41,6 +43,9 @@
   </script>
 </head>
 <body>
+
+<!-- Filled by alerts.js only when NWS has an active heat alert for Metro Detroit -->
+<div id="heat-alert" class="heat-alert" role="status" aria-live="polite" hidden></div>
 
 <!-- SECTION: HEADER ------------------------------------------------------ -->
 <header class="site-header">

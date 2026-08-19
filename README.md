@@ -9,10 +9,12 @@
 |---|---|
 | `index.html` | The English page. Copy is inside `<!-- SECTION: … -->` blocks so it's easy to find. |
 | `es/index.html` | Spanish page. Card copy is Isabelle's translation verbatim; the web-only sections (tools, report, reporting, footer) were translated by Claude and are marked with an HTML comment for Isabelle to review. |
+| `alerts.js` | Live NWS heat-alert banner (Wayne/Oakland/Macomb). Shows a strip at the top only when a Heat Advisory/Watch/Warning is active; otherwise invisible. Fails silently. |
 | `styles.css` | Styles following `/projects/design-system` (blue #2982C4, Georgia body, dark footer). |
 | `assets/` | Planet Detroit logos (dark for white bg, white for footer). |
 | `CNAME` | Custom-domain file for GitHub Pages. Do not rename. |
 | `tests/test_page.py` | Automated checks from the spec's acceptance criteria. `python3 tests/test_page.py` |
+| `tests/test_alerts.js` | Unit tests for the banner logic (`node tests/test_alerts.js`; also run by test_page.py). |
 | `tests/check_links.py` | Fetches every external link; run by hand or by the monthly Action. |
 | `.github/workflows/link-check.yml` | Monthly link check; opens a GitHub issue if a link dies. |
 | `MAINTENANCE.md` | How to tell it's working, common fixes, yearly review. |

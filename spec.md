@@ -59,7 +59,7 @@ A one-screen, phone-first "Guide to Working Safely in the Heat" that a worker re
 - [ ] When the page renders at 320px and 390px wide in headless Chrome, then no element overflows horizontally (screenshot check).
 
 ## 6. Out of Scope (v1)
-- No live heat index, weather, or alerts — the OSHA-NIOSH app does that; we link to it.
+- No live heat *index* numbers or weather — the OSHA-NIOSH app does that; we link to it. **Amendment 2026-08-19 (Nina):** a fail-silent NWS heat-alert banner (Wayne/Oakland/Macomb) IS included; it shows only when an advisory/watch/warning is active and disappears if the API is unavailable.
 - No cooling-center map or list (dates quickly; belongs in cat-civic-data if ever).
 - No sign-up form, comments, or accounts.
 - No native app / app-store listing. ("Mobile app" = mobile website. Adding "Add to Home Screen" support later is cheap if wanted.)

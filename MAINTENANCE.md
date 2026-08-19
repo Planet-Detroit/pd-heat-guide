@@ -25,8 +25,12 @@ Serves https://heatguide.planetdetroit.org/ — a static, one-page heat-safety g
 | Domain doesn't resolve | DNS record removed | MyKinsta → DNS → planetdetroit.org: CNAME `heatguide` → `planet-detroit.github.io` |
 | Tests fail after a copy edit | An edit removed a required link, section id, or added a date to body copy | Read the FAIL line — it says exactly what's missing |
 
+## Heat-alert banner
+Pulls from `api.weather.gov` (free, no key) each time the page loads. Nothing to maintain. If NWS is down or changes its API, the banner simply doesn't appear — the guide is unaffected. To test it by hand during a real advisory, open the page; to test without one, run `node tests/test_alerts.js`. If NWS renames heat events again, add the new name to `LEVELS`/`TEXT` in `alerts.js` and a test in `tests/test_alerts.js`.
+
 ## Dependencies
 - GitHub Pages (hosting, free) · planetdetroit.org DNS (MyKinsta)
 - Google Analytics 4 (optional; page works without it)
+- National Weather Service API (optional; only powers the alert banner)
 - External resource sites: apps.apple.com, play.google.com, cdc.gov, michigan.gov (MIOSHA), osha.gov, deepdives.planetdetroit.org
 - Python 3 (tests only)

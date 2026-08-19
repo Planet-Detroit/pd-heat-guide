@@ -178,3 +178,16 @@ a { color: var(--blue); }
 .lang-switch a { color: var(--blue); text-decoration: none; padding: 8px 4px; display: inline-block; } /* ≥44px tap area */
 .lang-switch .current { color: var(--text); padding: 8px 4px; display: inline-block; }
 @media print { .lang-switch { display: none; } }
+
+/* ---------- Live NWS heat-alert banner (hidden unless an alert is active) ---------- */
+.heat-alert {
+  font-family: var(--sans); font-size: 16px; line-height: 1.4;
+  padding: 12px 16px; text-align: center;
+  border-bottom: 3px solid transparent;
+}
+.heat-alert[hidden] { display: none; }
+.heat-alert-warning  { background: var(--red);   color: var(--white); border-color: #A82020; }
+.heat-alert-advisory { background: #F5B400;      color: #111;         border-color: #C79100; }
+.heat-alert-watch    { background: #F5B400;      color: #111;         border-color: #C79100; }
+.heat-alert a { color: inherit; font-weight: 700; }
+@media print { .heat-alert { display: none; } }

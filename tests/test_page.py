@@ -141,6 +141,24 @@ else:
     p2 = P(); p2.feed(es_src)
     check("Tags are balanced (ES)", not p2.stack and not p2.bad)
 
+
+# ---- NWS heat-alert banner (added 2026-08-19) ---------------------------
+# The banner must be hidden by default (no JS, API down → nothing shows) and the
+# script must be local, fail-safe, and present on both language pages.
+for label, src in [("EN", html_src)] + ([("ES", es_src)] if es_src else []):
+    check(f"{label}: banner container exists and is hidden by default",
+          re.search(r'<div id="heat-alert"[^>]*\bhidden\b', src) is not None)
+    check(f"{label}: loads local alerts.js (defer)", re.search(r'<script[^>]+src="(\.\./)?alerts\.js"[^>]*defer', src) is not None)
+    check(f"{label}: banner comes before the header", src.find('id="heat-alert"') < src.find('<header'))
+js = (ROOT / "alerts.js").read_text()
+check("alerts.js queries Wayne+Oakland+Macomb zones (MIZ076,MIZ069,MIZ070)", "MIZ076" in js and "MIZ069" in js and "MIZ070" in js)
+check("alerts.js has a fetch timeout", "AbortController" in js or "setTimeout" in js)
+check("alerts.js swallows errors (catch)", ".catch(" in js or "catch (" in js)
+check("alerts.js sends a User-Agent/identity header (NWS asks for one)", "planetdetroit" in js.lower())
+import subprocess
+r = subprocess.run(["node", str(ROOT / "tests" / "test_alerts.js")], capture_output=True, text=True)
+check("alert logic unit tests pass (node tests/test_alerts.js)", r.returncode == 0, r.stdout[-300:])
+
 print()
 if failures:
     print(f"{len(failures)} check(s) failed"); sys.exit(1)
