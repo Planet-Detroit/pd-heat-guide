@@ -8,7 +8,7 @@
 | File | Purpose |
 |---|---|
 | `index.html` | The English page. Copy is inside `<!-- SECTION: … -->` blocks so it's easy to find. |
-| `es/index.html` | Spanish page — **not created yet**; add when Isabelle's translation is ready (see below). |
+| `es/index.html` | Spanish page. Card copy is Isabelle's translation verbatim; the web-only sections (tools, report, reporting, footer) were translated by Claude and are marked with an HTML comment for Isabelle to review. |
 | `styles.css` | Styles following `/projects/design-system` (blue #2982C4, Georgia body, dark footer). |
 | `assets/` | Planet Detroit logos (dark for white bg, white for footer). |
 | `CNAME` | Custom-domain file for GitHub Pages. Do not rename. |
@@ -23,8 +23,8 @@
 2. Claude runs `python3 tests/test_page.py`, commits, pushes. GitHub Pages updates in ~1 minute.
 3. If you change a URL, it also needs changing in `tests/test_page.py` (the test lists the required links on purpose, so a link can't quietly disappear).
 
-## Adding the Spanish page
-Create `es/index.html` with the same sections in the same order (`<html lang="es">`), add a language switch (`class="lang-switch"`) at the top of both pages linking `/` ↔ `/es/`. The tests already know how to check it — they're skipped until the file exists.
+## Spanish page
+`/es/` mirrors `/` section for section; the English ↔ Español switch sits top-right. A tap on the switch is remembered on that phone (tiny bit of JavaScript using localStorage; the page still works with JS off). **When editing copy, edit both pages** — the tests check that they have the same number of sections.
 
 ## Deploy
 Push to `main` → live. Nothing else. There is no build step, server, or database.

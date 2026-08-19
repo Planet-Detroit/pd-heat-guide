@@ -169,3 +169,12 @@ a { color: var(--blue); }
   .site-footer a { color: #000; }
   .logo-footer { display: none; }
 }
+
+/* ---------- Language switch ---------- */
+.lang-switch {
+  font-family: var(--sans); font-size: 15px; font-weight: 600;
+  text-align: right; margin-bottom: 6px; color: var(--muted);
+}
+.lang-switch a { color: var(--blue); text-decoration: none; padding: 8px 4px; display: inline-block; } /* ≥44px tap area */
+.lang-switch .current { color: var(--text); padding: 8px 4px; display: inline-block; }
+@media print { .lang-switch { display: none; } }

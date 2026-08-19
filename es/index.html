@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía para trabajar de manera segura en condiciones de calor — Planet Detroit</title>
+  <meta name="description" content="Conoce los síntomas de las enfermedades causadas por el calor, qué hacer de inmediato, cuándo llamar al 911 y dónde denunciar condiciones inseguras. Una guía móvil de Planet Detroit para trabajadores del área metropolitana de Detroit.">
+  <meta name="theme-color" content="#2982C4">
+  <link rel="icon" href="../assets/logo-dark.png">
+  <link rel="stylesheet" href="../styles.css">
+  <meta property="og:title" content="Guía para trabajar de manera segura en condiciones de calor">
+  <meta property="og:description" content="Síntomas de las enfermedades causadas por el calor, qué hacer, cuándo llamar al 911 y dónde denunciar condiciones inseguras.">
+  <meta property="og:image" content="https://heatguide.planetdetroit.org/assets/logo-dark.png">
+
+  <!-- Google Analytics 4 — same property as planetdetroit.org tools (G-5QQJ9SVV07). -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QQJ9SVV07"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5QQJ9SVV07');
+    // Log which resource buttons and phone links people tap.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('http') === 0 || href.indexOf('tel:') === 0) {
+        gtag('event', 'resource_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 80) });
+      }
+    });
+  </script>
+  <script>
+    // Remember the reader's language choice on this phone (optional; page works without JS).
+    try {
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[data-lang]');
+        if (a) localStorage.setItem('heatguide-lang', a.getAttribute('data-lang'));
+      });
+      
+    } catch (err) {}
+  </script>
+</head>
+<body>
+
+<!-- SECTION: HEADER ------------------------------------------------------ -->
+<header class="site-header">
+  <nav class="lang-switch" aria-label="Idioma"><a href="/" lang="en" data-lang="en">English</a> · <span class="current">Español</span></nav>
+  <a href="https://planetdetroit.org/" target="_blank" rel="noopener" class="logo-link">
+    <img src="../assets/logo-dark.png" alt="Planet Detroit" class="logo" width="180" height="80">
+  </a>
+  <h1>Guía para trabajar de manera segura en condiciones de calor</h1>
+  <p class="lede">Mantente informado sobre los riesgos relacionados con el calor, los síntomas y qué hacer si tú o un compañero de trabajo se enferman en el trabajo.</p>
+</header>
+
+<main>
+
+<!-- SECTION: EMERGENCY (must stay first — spec §4.4) -------------------- -->
+<section id="emergency" class="emergency" aria-labelledby="emergency-h">
+  <p class="badge">Emergencia</p>
+  <h2 id="emergency-h">Golpe de calor = emergencia</h2>
+  <a class="btn btn-911" href="tel:911">Llama al 911 ahora</a>
+  <h3>Llama al 911 de inmediato si:</h3>
+  <ul>
+    <li>La persona deja de sudar</li>
+    <li>Parece confundida, no puede hablar con claridad o se desmaya</li>
+    <li>Tiene una convulsión</li>
+    <li>Tiene la piel muy caliente, enrojecida o seca</li>
+  </ul>
+  <h3>Mientras esperas que llegue la ayuda:</h3>
+  <ul>
+    <li>Lleva a la persona a un lugar fresco y quítale la ropa de abrigo</li>
+    <li>Enfría el cuerpo rápidamente con paños húmedos y fríos, bolsas de hielo o agua fría en la cabeza, el cuello, las axilas y la ingle</li>
+    <li>Quédate con ella hasta que lleguen los servicios médicos de emergencia</li>
+  </ul>
+</section>
+
+<!-- SECTION: KNOW THE SIGNS ---------------------------------------------- -->
+<section id="signs" aria-labelledby="signs-h">
+  <h2 id="signs-h">Conoce los síntomas de las enfermedades causadas por el calor</h2>
+  <h3>Señales de alerta tempranas:</h3>
+  <ul>
+    <li>Sudoración intensa</li>
+    <li>Dolor de cabeza, mareos o confusión</li>
+    <li>Náuseas o vómitos</li>
+    <li>Calambres musculares</li>
+    <li>Debilidad o sensación de desmayo</li>
+  </ul>
+  <h3>Actúa de inmediato:</h3>
+  <ul>
+    <li>Ve a un lugar con sombra o a un lugar interior más fresco</li>
+    <li>Bebe agua fresca a pequeños sorbos frecuentes</li>
+    <li>En caso de calambres por calor, toma un refrigerio o una bebida que reponga carbohidratos y electrolitos cada 15 a 20 minutos</li>
+    <li>Afloje la ropa; aplique paños fríos o bolsas de hielo en el cuello, las axilas o la ingle</li>
+    <li>Descanse hasta que se sienta mejor; no retome el trabajo pesado de inmediato</li>
+    <li>Lleve a un trabajador con agotamiento por calor a una clínica o al servicio de urgencias, o llame al 911 si no hay atención médica disponible</li>
+  </ul>
+  <p class="source">Fuente: <a href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" target="_blank" rel="noopener">Instituto Nacional de Seguridad y Salud Ocupacional (NIOSH)</a></p>
+</section>
+
+<!-- NOTE: Section text below (tools, report, reporting, footer) was translated by Claude, not Isabelle — review before treating as final. -->
+<!-- SECTION: TOOLS & RESOURCES ------------------------------------------- -->
+<section id="tools" aria-labelledby="tools-h">
+  <h2 id="tools-h">Herramientas y recursos</h2>
+
+  <div class="resource">
+    <h3>Aplicación OSHA-NIOSH Heat Safety Tool</h3>
+    <p>Aplicación gratuita que muestra el índice de calor donde estás, hora por hora, con recomendaciones de seguridad para el trabajo al aire libre. (Disponible en inglés y español.)</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/osha-niosh-heat-safety-tool/id1239425102" target="_blank" rel="noopener">Descargar para iPhone</a>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=erg.com.nioshheatindex" target="_blank" rel="noopener">Descargar para Android</a>
+    </div>
+    <p class="fine"><a href="https://www.cdc.gov/niosh/heat-stress/communication-resources/app.html" target="_blank" rel="noopener">Acerca de la aplicación (cdc.gov, en inglés)</a></p>
+  </div>
+
+  <div class="resource">
+    <h3>Tipos de enfermedades por calor y qué hacer</h3>
+    <p>Guía de los CDC/NIOSH sobre el golpe de calor, el agotamiento por calor, los calambres y el sarpullido, con un plan de acción médica para cada uno. (En inglés.)</p>
+    <a class="btn btn-secondary" href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" target="_blank" rel="noopener">Leer la guía de los CDC <span class="domain">cdc.gov</span></a>
+  </div>
+
+  <div class="resource">
+    <h3>Planes de prevención de enfermedades por calor para lugares de trabajo en Michigan</h3>
+    <p>La página de MIOSHA sobre el calor incluye un plan modelo de prevención de enfermedades por calor que los empleadores pueden adoptar, además de hojas informativas y materiales de capacitación. (En inglés.)</p>
+    <a class="btn btn-secondary" href="https://www.michigan.gov/leo/bureaus-agencies/miosha/topics/heat" target="_blank" rel="noopener">Recursos de MIOSHA sobre el calor <span class="domain">michigan.gov</span></a>
+  </div>
+
+  <div class="resource">
+    <h3>Guía federal de seguridad contra el calor</h3>
+    <p>Página de OSHA sobre la exposición al calor: responsabilidades del empleador, protecciones para los trabajadores, lo básico de agua, descanso y sombra, y primeros auxilios.</p>
+    <a class="btn btn-secondary" href="https://www.osha.gov/heat-exposure" target="_blank" rel="noopener">OSHA: exposición al calor <span class="domain">osha.gov</span></a>
+  </div>
+</section>
+
+<!-- SECTION: REPORT UNSAFE CONDITIONS ------------------------------------ -->
+<section id="report" aria-labelledby="report-h">
+  <h2 id="report-h">Denuncia condiciones inseguras</h2>
+  <p>Tienes derecho a un lugar de trabajo seguro y a denunciar peligros sin represalias. Michigan no tiene una norma específica sobre el calor, pero MIOSHA espera que los empleadores tomen medidas para prevenir las enfermedades por calor —como proporcionar agua, descanso y sombra— e investiga las quejas.</p>
+  <div class="resource">
+    <h3>MIOSHA (Michigan)</h3>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://www.michigan.gov/leo/bureaus-agencies/miosha/enforcement-and-appeals/how-to-file-a-complaint-with-miosha" target="_blank" rel="noopener">Presentar una queja en línea <span class="domain">michigan.gov</span></a>
+      <a class="btn btn-secondary" href="tel:18008664674">Llamar al 800-866-4674</a>
+    </div>
+  </div>
+  <div class="resource">
+    <h3>OSHA (federal)</h3>
+    <a class="btn btn-secondary" href="https://www.osha.gov/workers/file-complaint" target="_blank" rel="noopener">Presentar una queja ante OSHA <span class="domain">osha.gov</span></a>
+  </div>
+</section>
+
+<!-- SECTION: PLANET DETROIT REPORTING ------------------------------------ -->
+<section id="reporting" aria-labelledby="reporting-h">
+  <h2 id="reporting-h">Reportajes de Planet Detroit sobre el calor</h2>
+  <p>Nuestra cobertura continua sobre cómo el calor extremo afecta a los trabajadores y las comunidades del área metropolitana de Detroit, y qué se está haciendo al respecto. (En inglés.)</p>
+  <a class="btn btn-primary" href="https://deepdives.planetdetroit.org/heat-and-harm/" target="_blank" rel="noopener">Leer “Heat and Harm”</a>
+</section>
+
+</main>
+
+<!-- SECTION: FOOTER (the only place dates are allowed) -------------------- -->
+<footer class="site-footer">
+  <a href="https://planetdetroit.org/" target="_blank" rel="noopener">
+    <img src="../assets/logo-white.png" alt="Planet Detroit" class="logo-footer" width="124" height="55">
+  </a>
+  <p>Planet Detroit es una redacción independiente y sin fines de lucro que cubre medio ambiente, salud y clima en el área metropolitana de Detroit.</p>
+  <p class="fine">Orientación de salud adaptada de NIOSH (CDC). Esta guía es información general y no constituye consejo médico; en caso de emergencia, llama al 911.</p>
+  <p class="fine">Última revisión: agosto de 2026 · <a href="https://planetdetroit.org/" target="_blank" rel="noopener">planetdetroit.org</a></p>
+</footer>
+
+</body>
+</html>

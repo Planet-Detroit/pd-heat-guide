@@ -29,11 +29,22 @@
       }
     });
   </script>
+  <script>
+    // Remember the reader's language choice on this phone (optional; page works without JS).
+    try {
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[data-lang]');
+        if (a) localStorage.setItem('heatguide-lang', a.getAttribute('data-lang'));
+      });
+      if (localStorage.getItem('heatguide-lang') === 'es' && location.pathname === '/') location.replace('/es/');
+    } catch (err) {}
+  </script>
 </head>
 <body>
 
 <!-- SECTION: HEADER ------------------------------------------------------ -->
 <header class="site-header">
+  <nav class="lang-switch" aria-label="Language"><span class="current">English</span> · <a href="/es/" lang="es" data-lang="es">Español</a></nav>
   <a href="https://planetdetroit.org/" target="_blank" rel="noopener" class="logo-link">
     <img src="assets/logo-dark.png" alt="Planet Detroit" class="logo" width="180" height="80">
   </a>

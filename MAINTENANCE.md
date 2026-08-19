@@ -12,7 +12,7 @@ Serves https://heatguide.planetdetroit.org/ — a static, one-page heat-safety g
 ## Yearly review (put on the calendar for each June, before heat season)
 1. Isabelle re-reads the copy against the current NIOSH/CDC guidance.
 2. Run `python3 tests/check_links.py`; open any WARN'd (403) links in a browser by hand.
-3. Update "Last reviewed: Month YYYY" in the footer of `index.html` (and `es/index.html`).
+3. Update "Last reviewed: Month YYYY" in the footer of `index.html` and "Última revisión" in `es/index.html`.
 4. Commit + push.
 
 ## Common problems
